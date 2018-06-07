@@ -53,6 +53,12 @@ public static void main(String[] args) throws ClassNotFoundException  {
             System.out.println(product_no + " " + name + " " + price + " руб. " + cnt + " шт.");
         
         }  
+    
+     rs.close();
+     stmt.close();
+     c.commit();
+
+ 
     //удаление  
     stmt = c.createStatement();
         sql = "DELETE from store where PRODUCT_NO = 5;";
@@ -64,13 +70,11 @@ public static void main(String[] args) throws ClassNotFoundException  {
      }
         catch(SQLException e){e.printStackTrace();}
  // Почему ругается, что переменная с не может быть инициализирована?
-    finally{
+   finally{
         try{c.close();}catch(SQLException e)
         {e.printStackTrace();}
-        
-    }
-//          
-        
-    }
+          }
+//             
+      }
     
 }
